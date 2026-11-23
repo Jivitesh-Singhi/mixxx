@@ -1,3 +1,6 @@
+#include <QTextDocument>
+#include "widget/wlibrarytextbrowser.h"
+
 #include "widget/wlibrary.h"
 
 #include <QKeyEvent>
@@ -33,6 +36,14 @@ void WLibrary::setup(const QDomNode& node, const SkinContext& context) {
             kMaxTrackTableBackgroundColorOpacity);
 
     m_overviewSignalColors.setup(node, context);
+}
+void WLibrary::setFeaturePageFont(const QFont& font) {
+    for (int i = 0; i < count(); ++i) {
+        auto* pBrowser = qobject_cast<WLibraryTextBrowser*>(widget(i));
+        if (pBrowser) {
+            pBrowser->document()->setDefaultFont(font);
+        }
+    }
 }
 
 bool WLibrary::registerView(const QString& name, QWidget* pView) {
