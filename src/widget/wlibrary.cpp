@@ -1,16 +1,15 @@
-#include <QTextDocument>
-#include "widget/wlibrarytextbrowser.h"
-
 #include "widget/wlibrary.h"
 
 #include <QKeyEvent>
 #include <QMutexLocker>
+#include <QTextDocument>
 #include <QtDebug>
 
 #include "library/libraryview.h"
 #include "moc_wlibrary.cpp"
 #include "skin/legacy/skincontext.h"
 #include "util/math.h"
+#include "widget/wlibrarytextbrowser.h"
 #include "widget/wtracktableview.h"
 
 WLibrary::WLibrary(QWidget* parent)
